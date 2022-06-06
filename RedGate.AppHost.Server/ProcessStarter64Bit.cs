@@ -2,9 +2,9 @@
 {
     internal class ProcessStarter64Bit : ProcessStarter
     {
-        protected override string ProcessFileName
+        internal ProcessStarter64Bit() : base("RedGate.AppHost.Client.x64.exe", true)
         {
-            get { return "RedGate.AppHost.Client.x64.exe"; }
+
         }
     }
 }

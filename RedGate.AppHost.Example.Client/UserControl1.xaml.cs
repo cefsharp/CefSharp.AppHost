@@ -12,9 +12,9 @@ namespace RedGate.AppHost.Example.Client
             InitializeComponent();
 
             Content = new TextBlock
-                      {
-                          Text = textToDisplay
-                      };
+            {
+                Text = textToDisplay
+            };
         }
     }
 }

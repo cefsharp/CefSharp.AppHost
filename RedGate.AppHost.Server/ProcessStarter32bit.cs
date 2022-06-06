@@ -2,9 +2,9 @@ namespace RedGate.AppHost.Server
 {
     internal class ProcessStarter32Bit : ProcessStarter
     {
-        protected override string ProcessFileName
+        internal ProcessStarter32Bit() : base ("RedGate.AppHost.Client.x86.exe", false)
         {
-            get { return "RedGate.AppHost.Client.exe"; }
+
         }
     }
 }

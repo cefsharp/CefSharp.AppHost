@@ -1,78 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RedGate.AppHost.Remoting.WPF</RootNamespace>
-    <AssemblyName>RedGate.AppHost.Remoting.WPF</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>\\red-gate.com\Files\RG_Build_Key\RedGate.snk</AssemblyOriginatorKeyFile>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>$(SolutionDir)Build\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <TargetFramework>net462</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyTitle>RedGate.AppHost.Remoting.WPF</AssemblyTitle>
+    <Product>RedGate.AppHost.Remoting.WPF</Product>
+    <Copyright>Copyright ©  2014</Copyright>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>$(SolutionDir)Build\$(Configuration)\</OutputPath>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>$(SolutionDir)Build\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <!-- Don't try to sign if it's built inside visual studio, there's probably no point -->
-  <PropertyGroup Condition="'$(BuildingInsideVisualStudio)' == ''">
-    <RedGate_DontObfuscate>true</RedGate_DontObfuscate> <!-- Need to set this to tell signing task where to look for assembly -->
-    <RedGate_DoSign>true</RedGate_DoSign>
-  </PropertyGroup>
+  
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
+    <ProjectReference Include="..\RedGate.AppHost.Interfaces\RedGate.AppHost.Interfaces.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <Reference Include="System.AddIn.Contract" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Windows.Presentation" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="NativeHandleContractAdapter.cs" />
-    <Compile Include="NativeHandleContractMarshalByRefObject.cs" />
-    <Compile Include="FrameworkElementExtensions.cs" />
-    <Compile Include="RemoteElementExtensions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RedGate.AppHost.Interfaces\RedGate.AppHost.Interfaces.csproj">
-      <Project>{3084D987-50DD-43A5-9CF3-CE550513F8D0}</Project>
-      <Name>RedGate.AppHost.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(RedGate_BuildTargetsPath)" Condition="'$(BuildingInsideVisualStudio)' == ''" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

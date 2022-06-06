@@ -3,7 +3,7 @@
   <!-- Note: We cannot use the recommended style of specifying <Project Sdk=...> because we need
        to set BaseIntermediateOutputPath and BaseOutputPath before the SDK props are imported. -->
   <PropertyGroup>
-    <BaseIntermediateOutputPath>obj.x64\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>obj.x86\</BaseIntermediateOutputPath>
   </PropertyGroup>
 
   <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk.WindowsDesktop" />
@@ -21,7 +21,7 @@
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <UseWPF>true</UseWPF>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <ApplicationIcon>honeycomb.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -29,12 +29,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="obj.x86\**" />
-    <EmbeddedResource Remove="obj.x86\**" />
-    <None Remove="obj.x86\**" />
-    <Page Remove="obj.x86\**" />
+    <Compile Remove="obj.x64\**" />
+    <EmbeddedResource Remove="obj.x64\**" />
+    <None Remove="obj.x64\**" />
+    <Page Remove="obj.x64\**" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="1.9.71" />
   </ItemGroup>

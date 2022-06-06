@@ -13,7 +13,7 @@ namespace RedGate.AppHost.Example.Server
 
             try
             {
-                var safeAppHostChildHandle = new ChildProcessFactory().Create("RedGate.AppHost.Example.Client.dll");
+                var safeAppHostChildHandle = ChildProcessFactory.Create("RedGate.AppHost.Example.Client.dll", is64Bit:true);
 
                 Content = safeAppHostChildHandle.CreateElement(new ServiceLocator());
             }

@@ -6,14 +6,21 @@ namespace RedGate.AppHost.Server
 {
     internal abstract class ProcessStarter : IProcessStartOperation
     {
-        protected abstract string ProcessFileName { get; }
+        private string _processFileName;
+        private bool _is64bit;
+
+        protected ProcessStarter(string processsFileName, bool is64bit)
+        {
+            _processFileName = processsFileName;
+            _is64bit = is64bit;
+        }
 
         public Process StartProcess(string assemblyName, string remotingId, bool openDebugConsole, bool monitorHostProcess)
         {
             string executingDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string quotedAssemblyArg = "\"" + Path.Combine(executingDirectory, assemblyName) + "\"";
 
-            var processToStart = Path.Combine(executingDirectory, ProcessFileName);
+            var processToStart = Path.Combine(executingDirectory, _processFileName);
             var processArguments = string.Join(" ", new[]
             {
                 "-i " + remotingId,

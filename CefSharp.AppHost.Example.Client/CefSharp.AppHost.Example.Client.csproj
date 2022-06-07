@@ -9,7 +9,11 @@
     <OutputPath>$(SolutionDir)Build\$(Configuration)\</OutputPath>
     <UseWPF>true</UseWPF>
     <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CefSharp.Wpf" Version="102.0.90" />
+  </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\CefSharp.AppHost.Example.Remote.Services\CefSharp.AppHost.Example.Remote.Services.csproj" />

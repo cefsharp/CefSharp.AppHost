@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using CefSharp.AppHost.Example.Remote.Services;
 using CefSharp.AppHost.Interfaces;
 
 namespace CefSharp.AppHost.Example.Client
@@ -8,11 +7,7 @@ namespace CefSharp.AppHost.Example.Client
     {
         public FrameworkElement CreateElement(IAppHostServices service)
         {
-            var serverThing = service.GetService<IServerImplementedThingThatClientNeeds>();
-
-            string textToDisplay = serverThing.GetTextToDisplay();
-
-            return new UserControl1(textToDisplay);
+            return new BrowserUserControl();
         }
     }
 }

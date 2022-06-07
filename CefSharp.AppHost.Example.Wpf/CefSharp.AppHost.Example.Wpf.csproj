@@ -10,6 +10,7 @@
     <OutputPath>$(SolutionDir)Build\$(Configuration)\</OutputPath>
     <DebugType>full</DebugType>
     <UseWPF>true</UseWPF>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.AddIn.Contract" />

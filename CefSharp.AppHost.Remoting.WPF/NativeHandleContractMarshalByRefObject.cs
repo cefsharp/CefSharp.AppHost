@@ -8,16 +8,16 @@ namespace CefSharp.AppHost.Remoting.WPF
 {
     internal class NativeHandleContractMarshalByRefObject : MarshalByRefObject, IRemoteElement
     {
+        private readonly INativeHandleContract _upstream;
+
         internal static NativeHandleContractMarshalByRefObject Create(FrameworkElement element)
         {
             return new NativeHandleContractMarshalByRefObject(FrameworkElementAdapters.ViewToContractAdapter(element));
-        }
-
-        private readonly INativeHandleContract m_Upstream;
+        }        
 
         private NativeHandleContractMarshalByRefObject(INativeHandleContract upstream)
         {
-            m_Upstream = upstream;
+            _upstream = upstream;
         }
 
         public override object InitializeLifetimeService()
@@ -27,37 +27,37 @@ namespace CefSharp.AppHost.Remoting.WPF
 
         public IContract QueryContract(string contractIdentifier)
         {
-            return m_Upstream.QueryContract(contractIdentifier);
+            return _upstream.QueryContract(contractIdentifier);
         }
 
         public int GetRemoteHashCode()
         {
-            return m_Upstream.GetRemoteHashCode();
+            return _upstream.GetRemoteHashCode();
         }
 
         public bool RemoteEquals(IContract contract)
         {
-            return m_Upstream.RemoteEquals(contract);
+            return _upstream.RemoteEquals(contract);
         }
 
         public string RemoteToString()
         {
-            return m_Upstream.RemoteToString();
+            return _upstream.RemoteToString();
         }
 
         public int AcquireLifetimeToken()
         {
-            return m_Upstream.AcquireLifetimeToken();
+            return _upstream.AcquireLifetimeToken();
         }
 
         public void RevokeLifetimeToken(int token)
         {
-            m_Upstream.RevokeLifetimeToken(token);
+            _upstream.RevokeLifetimeToken(token);
         }
 
         public long GetHandle()
         {
-            return (long)m_Upstream.GetHandle();
+            return (long)_upstream.GetHandle();
         }
     }
 }

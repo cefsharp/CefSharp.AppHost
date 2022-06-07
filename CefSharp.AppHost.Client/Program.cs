@@ -12,7 +12,7 @@ namespace CefSharp.AppHost.Client
 {
     internal static class Program
     {
-        private static SafeChildProcessHandle s_SafeChildProcessHandle;
+        private static SafeChildProcessHandle SafeChildProcessHandle;
 
         [STAThread]
         private static void Main(string[] args)
@@ -62,8 +62,8 @@ namespace CefSharp.AppHost.Client
         {
             Remoting.Remoting.RegisterChannels(true, id);
 
-            s_SafeChildProcessHandle = new SafeChildProcessHandle(Dispatcher.CurrentDispatcher, entryPoint);
-            Remoting.Remoting.RegisterService<SafeChildProcessHandle, ISafeChildProcessHandle>(s_SafeChildProcessHandle);
+            SafeChildProcessHandle = new SafeChildProcessHandle(Dispatcher.CurrentDispatcher, entryPoint);
+            Remoting.Remoting.RegisterService<SafeChildProcessHandle, ISafeChildProcessHandle>(SafeChildProcessHandle);
         }
 
         private static void SignalReady(string id)

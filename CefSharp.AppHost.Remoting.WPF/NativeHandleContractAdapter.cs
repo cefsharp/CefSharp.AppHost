@@ -6,51 +6,51 @@ namespace CefSharp.AppHost.Remoting.WPF
 {
     internal class NativeHandleContractAdapter : INativeHandleContract
     {
-        private readonly IRemoteElement m_Upstream;
+        private readonly IRemoteElement _upstream;
 
         internal NativeHandleContractAdapter(IRemoteElement upstream)
         {
             if (upstream == null)
             {
-                throw new ArgumentNullException("upstream");
+                throw new ArgumentNullException(nameof(upstream));
             }
-            m_Upstream = upstream;
+            _upstream = upstream;
         }
 
 
         public IContract QueryContract(string contractIdentifier)
         {
-            return m_Upstream.QueryContract(contractIdentifier);
+            return _upstream.QueryContract(contractIdentifier);
         }
 
         public int GetRemoteHashCode()
         {
-            return m_Upstream.GetRemoteHashCode();
+            return _upstream.GetRemoteHashCode();
         }
 
         public bool RemoteEquals(IContract contract)
         {
-            return m_Upstream.RemoteEquals(contract);
+            return _upstream.RemoteEquals(contract);
         }
 
         public string RemoteToString()
         {
-            return m_Upstream.RemoteToString();
+            return _upstream.RemoteToString();
         }
 
         public int AcquireLifetimeToken()
         {
-            return m_Upstream.AcquireLifetimeToken();
+            return _upstream.AcquireLifetimeToken();
         }
 
         public void RevokeLifetimeToken(int token)
         {
-            m_Upstream.RevokeLifetimeToken(token);
+            _upstream.RevokeLifetimeToken(token);
         }
 
         public IntPtr GetHandle()
         {
-            return (IntPtr)m_Upstream.GetHandle();
+            return (IntPtr)_upstream.GetHandle();
         }
     }
 }

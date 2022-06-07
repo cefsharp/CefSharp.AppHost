@@ -4,15 +4,13 @@ using System.Reflection;
 
 namespace CefSharp.AppHost.Server
 {
-    internal abstract class ProcessStarter : IProcessStartOperation
+    internal class ProcessStarter : IProcessStartOperation
     {
         private string _processFileName;
-        private bool _is64bit;
 
-        protected ProcessStarter(string processsFileName, bool is64bit)
+        internal ProcessStarter(string processsFileName)
         {
             _processFileName = processsFileName;
-            _is64bit = is64bit;
         }
 
         public Process StartProcess(string assemblyName, string remotingId, bool openDebugConsole, bool monitorHostProcess)

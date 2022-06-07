@@ -6,29 +6,29 @@ namespace CefSharp.AppHost.Server
 {
     internal class RemotedProcessBootstrapper
     {
-        private readonly IProcessStartOperation m_ProcessBootstrapper;
-        private readonly string m_RemotingId = string.Format("CefSharp.AppHost.IPC.{{{0}}}", Guid.NewGuid());
+        private readonly IProcessStartOperation _processBootstrapper;
+        private readonly string _remotingId = string.Format("CefSharp.AppHost.IPC.{{{0}}}", Guid.NewGuid());
 
         public RemotedProcessBootstrapper(IProcessStartOperation processBootstrapper)
         {
             if (processBootstrapper == null)
                 throw new ArgumentNullException("processBootstrapper");
 
-            m_ProcessBootstrapper = processBootstrapper;
+            _processBootstrapper = processBootstrapper;
         }
 
         public IChildProcessHandle Create(string assemblyName, bool openDebugConsole, bool monitorHostProcess)
         {
             Process process = null;
+
             try
             {
-                process = m_ProcessBootstrapper.StartProcess(assemblyName, m_RemotingId, openDebugConsole, monitorHostProcess);
+                process = _processBootstrapper.StartProcess(assemblyName, _remotingId, openDebugConsole, monitorHostProcess);
                 return new ChildProcessHandle(InitializeRemoting(), process);
             }
             catch
             {
-                if (process != null)
-                    process.KillAndDispose();
+                process?.KillAndDispose();
 
                 throw;
             }
@@ -36,9 +36,9 @@ namespace CefSharp.AppHost.Server
 
         private ISafeChildProcessHandle InitializeRemoting()
         {
-            Remoting.Remoting.RegisterChannels(false, m_RemotingId);
+            Remoting.Remoting.RegisterChannels(false, _remotingId);
 
-            return Remoting.Remoting.ConnectToService<ISafeChildProcessHandle>(m_RemotingId);
+            return Remoting.Remoting.ConnectToService<ISafeChildProcessHandle>(_remotingId);
         }
     }
 }

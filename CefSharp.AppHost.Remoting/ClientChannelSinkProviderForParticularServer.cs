@@ -5,31 +5,31 @@ namespace CefSharp.AppHost.Remoting
 {
     internal class ClientChannelSinkProviderForParticularServer : IClientChannelSinkProvider
     {
-        private readonly IClientChannelSinkProvider m_Upstream;
-        private readonly string m_Url;
+        private readonly IClientChannelSinkProvider _upstream;
+        private readonly string _url;
 
         internal ClientChannelSinkProviderForParticularServer(IClientChannelSinkProvider upstream, string id)
         {
             if (upstream == null) 
-                throw new ArgumentNullException("upstream");
+                throw new ArgumentNullException(nameof(upstream));
 
-            if (String.IsNullOrEmpty(id)) 
-                throw new ArgumentNullException("id");
+            if (string.IsNullOrEmpty(id)) 
+                throw new ArgumentNullException(nameof(id));
 
-            m_Upstream = upstream;
-            m_Url = string.Format("ipc://{0}", id);
+            _upstream = upstream;
+            _url = string.Format("ipc://{0}", id);
         }
 
         public IClientChannelSinkProvider Next
         {
-            get { return m_Upstream.Next; }
-            set { m_Upstream.Next = value; }
+            get { return _upstream.Next; }
+            set { _upstream.Next = value; }
         }
 
         public IClientChannelSink CreateSink(IChannelSender channel, string url, object remoteChannelData)
         {
             //Returning null indicates that the sink cannot be created as per Microsoft documentation
-            return url == m_Url ? m_Upstream.CreateSink(channel, url, remoteChannelData) : null;
+            return url == _url ? _upstream.CreateSink(channel, url, remoteChannelData) : null;
         }
     }
 }

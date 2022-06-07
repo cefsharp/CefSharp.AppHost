@@ -5,25 +5,25 @@ namespace CefSharp.AppHost.Client
 {
     internal class HostProcessMonitor
     {
-        private readonly int m_HostProcessId;
-        private readonly Action m_OnHostMissing;
+        private readonly int _hostProcessId;
+        private readonly Action _onHostMissing;
 
         public HostProcessMonitor(int hostProcessId, Action onHostMissing)
         {
             if (onHostMissing == null)
             {
-                throw new ArgumentNullException("onHostMissing");
+                throw new ArgumentNullException(nameof(onHostMissing));
             }
 
-            m_HostProcessId = hostProcessId;
-            m_OnHostMissing = onHostMissing;
+            _hostProcessId = hostProcessId;
+            _onHostMissing = onHostMissing;
         }
 
         public void Start()
         {
-            var hostProcess = Process.GetProcessById(m_HostProcessId);
+            var hostProcess = Process.GetProcessById(_hostProcessId);
             hostProcess.EnableRaisingEvents = true;
-            hostProcess.Exited += (sender, e) => { m_OnHostMissing(); };
+            hostProcess.Exited += (sender, e) => { _onHostMissing(); };
         }
     }
 }

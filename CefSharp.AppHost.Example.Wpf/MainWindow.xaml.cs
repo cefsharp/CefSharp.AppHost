@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Interop;
+using System.Windows.Media;
 using CefSharp.AppHost.Server;
 
 namespace CefSharp.AppHost.Example.Server
@@ -15,14 +17,16 @@ namespace CefSharp.AppHost.Example.Server
             {
                 var safeAppHostChildHandle = ChildProcessFactory.Create("CefSharp.AppHost.Example.Client.dll", is64Bit:true);
 
-                Content = safeAppHostChildHandle.CreateElement(new ServiceLocator());
+                var browser = (HwndHost)safeAppHostChildHandle.CreateElement(new ServiceLocator());
+
+                BrowserContainer.Content = browser;
             }
             catch (Exception e)
             {
                 Content = new TextBlock
-                    {
-                              Text = e.ToString()
-                          };
+                {
+                    Text = e.ToString()
+                };
             }
         }
     }

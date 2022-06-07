@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Runtime.Remoting;
 using System.Windows;
 using CefSharp.AppHost.Interfaces;
@@ -9,27 +8,25 @@ namespace CefSharp.AppHost.Server
 {
     internal class ChildProcessHandle : IChildProcessHandle
     {
-        private readonly ISafeChildProcessHandle m_SafeChildProcessHandle;
-        private readonly Process m_Process;
+        private readonly ISafeChildProcessHandle _safeChildProcessHandle;
+        private readonly Process _process;
 
         public ChildProcessHandle(ISafeChildProcessHandle safeChildProcessHandle, Process process)
         {
-            m_SafeChildProcessHandle = safeChildProcessHandle;
-            m_Process = process;
+            _safeChildProcessHandle = safeChildProcessHandle;
+            _process = process;
         }
 
         public FrameworkElement CreateElement(IAppHostServices services)
         {
             try
             {
-                return m_SafeChildProcessHandle.CreateElement(services).ToFrameworkElement();
+                return _safeChildProcessHandle.CreateElement(services).ToFrameworkElement();
             }
             catch (RemotingException)
             {
-                if (m_Process != null)
-                {
-                    m_Process.KillAndDispose();
-                }
+                _process?.KillAndDispose();
+
                 throw;
             }
         }

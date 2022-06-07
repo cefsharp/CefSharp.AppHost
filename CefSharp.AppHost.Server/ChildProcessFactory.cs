@@ -4,16 +4,7 @@
     {
         public static IChildProcessHandle Create(string assemblyName, bool is64Bit, bool openDebugConsole = false, bool monitorHostProcess = true)
         {
-            IProcessStartOperation processStarter;
-
-            if (is64Bit)
-            {
-                processStarter = new ProcessStarter64Bit();
-            }
-            else
-            {
-                processStarter = new ProcessStarter32Bit();
-            }
+            var processStarter = new ProcessStarter(is64Bit ? "CefSharp.AppHost.Client.x64.exe" : "CefSharp.AppHost.Client.x86.exe");
 
             return new RemotedProcessBootstrapper(
                 new StartProcessWithTimeout(

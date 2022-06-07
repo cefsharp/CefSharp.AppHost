@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CefSharp.AppHost</id>
+    <version>1.0.0</version>
+    <title>CefSharp Out of Process App Host</title>
+    <authors>Red Gate, amaitland</authors>
+    <owners>amaitland</owners>
+    <projectUrl>https://github.com/CefSharp/CefSharp.AppHost</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides a way to host a UI out of process and remote it in</description>
+    <summary>Provides a way to host a UI out of process and remote it in</summary>
+    <references>
+      <reference file="CefSharp.AppHost.Server.dll" />
+      <reference file="CefSharp.AppHost.Interfaces.dll" />
+      <reference file="CefSharp.AppHost.Remoting.WPF.dll" />
+    </references>
+  <dependencies>
+    <dependency id="CommandLineParser" version="1.9.71" />
+  </dependencies>
+  </metadata>
+  <files>
+    <file src="CefSharp.AppHost.Client.exe" target="AppHostClientExe" />
+    <file src="CefSharp.AppHost.Client.pdb" target="AppHostClientExe" />
+    <file src="CefSharp.AppHost.Client.x64.exe" target="AppHostClientExe" />
+    <file src="CefSharp.AppHost.Client.x64.pdb" target="AppHostClientExe" />
+    
+    <file src="Build\CefSharp.AppHost.targets" target="Build" />
+    
+    <file src="CefSharp.AppHost.Example.Client.dll" target="lib" />
+    <file src="CefSharp.AppHost.Example.Server.exe" target="lib" />
+    <file src="CefSharp.AppHost.Example.Remote.Services.dll" target="lib" />
+    <file src="CefSharp.AppHost.Interfaces.dll" target="lib" />
+    <file src="CefSharp.AppHost.Interfaces.pdb" target="lib" />
+    <file src="CefSharp.AppHost.Remoting.dll" target="lib" />
+    <file src="CefSharp.AppHost.Remoting.pdb" target="lib" />
+    <file src="CefSharp.AppHost.Remoting.WPF.dll" target="lib" />
+    <file src="CefSharp.AppHost.Remoting.WPF.pdb" target="lib" />
+    <file src="CefSharp.AppHost.Server.dll" target="lib" />
+    <file src="CefSharp.AppHost.Server.pdb" target="lib" />
+    
+    <file src="CefSharp.AppHost.wxs" target="WiX2\CefSharp.AppHost.wxs" />
+  </files>
+</package>

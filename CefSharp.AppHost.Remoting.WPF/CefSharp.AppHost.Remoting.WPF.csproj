@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyTitle>CefSharp.AppHost.Remoting.WPF</AssemblyTitle>
+    <Product>CefSharp.AppHost.Remoting.WPF</Product>
+    <Copyright>Copyright ©  2014</Copyright>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>$(SolutionDir)Build\$(Configuration)\</OutputPath>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\CefSharp.AppHost.Interfaces\CefSharp.AppHost.Interfaces.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="System.AddIn.Contract" />
+    <Reference Include="System.Windows.Presentation" />
+  </ItemGroup>
+</Project>

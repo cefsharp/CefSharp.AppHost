@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyTitle>CefSharp.AppHost.Example.Client</AssemblyTitle>
+    <Product>CefSharp.AppHost.Example.Client</Product>
+    <Copyright>Copyright ©  2014</Copyright>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>$(SolutionDir)Build\$(Configuration)\</OutputPath>
+    <UseWPF>true</UseWPF>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\CefSharp.AppHost.Example.Remote.Services\CefSharp.AppHost.Example.Remote.Services.csproj" />
+    <ProjectReference Include="..\CefSharp.AppHost.Interfaces\CefSharp.AppHost.Interfaces.csproj" />
+  </ItemGroup>
+</Project>

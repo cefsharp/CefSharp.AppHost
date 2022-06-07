@@ -1,0 +1,205 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6.2": {
+      "CommandLineParser/1.9.71": {
+        "type": "package",
+        "compile": {
+          "lib/net45/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net45/CommandLine.dll": {}
+        }
+      },
+      "CefSharp.AppHost.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "compile": {
+          "bin/placeholder/CefSharp.AppHost.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CefSharp.AppHost.Interfaces.dll": {}
+        }
+      },
+      "CefSharp.AppHost.Remoting/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "compile": {
+          "bin/placeholder/CefSharp.AppHost.Remoting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CefSharp.AppHost.Remoting.dll": {}
+        }
+      },
+      "CefSharp.AppHost.Remoting.WPF/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "CefSharp.AppHost.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CefSharp.AppHost.Remoting.WPF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CefSharp.AppHost.Remoting.WPF.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.2/win7-x86": {
+      "CommandLineParser/1.9.71": {
+        "type": "package",
+        "compile": {
+          "lib/net45/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net45/CommandLine.dll": {}
+        }
+      },
+      "CefSharp.AppHost.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "compile": {
+          "bin/placeholder/CefSharp.AppHost.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CefSharp.AppHost.Interfaces.dll": {}
+        }
+      },
+      "CefSharp.AppHost.Remoting/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "compile": {
+          "bin/placeholder/CefSharp.AppHost.Remoting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CefSharp.AppHost.Remoting.dll": {}
+        }
+      },
+      "CefSharp.AppHost.Remoting.WPF/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "CefSharp.AppHost.Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CefSharp.AppHost.Remoting.WPF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CefSharp.AppHost.Remoting.WPF.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommandLineParser/1.9.71": {
+      "sha512": "zm4qHiMcFsxrZ4JqrSmqQVNkaZrKHlMih7mQJrd+GB617QBUxdmg3v1yFHxKfrcjY+UbwBuFq9W8Um8HEomuXg==",
+      "type": "package",
+      "path": "commandlineparser/1.9.71",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "commandlineparser.1.9.71.nupkg.sha512",
+        "commandlineparser.nuspec",
+        "lib/net35/CommandLine.dll",
+        "lib/net35/CommandLine.xml",
+        "lib/net40/CommandLine.dll",
+        "lib/net40/CommandLine.xml",
+        "lib/net45/CommandLine.dll",
+        "lib/net45/CommandLine.xml",
+        "readme.txt"
+      ]
+    },
+    "CefSharp.AppHost.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../CefSharp.AppHost.Interfaces/CefSharp.AppHost.Interfaces.csproj",
+      "msbuildProject": "../CefSharp.AppHost.Interfaces/CefSharp.AppHost.Interfaces.csproj"
+    },
+    "CefSharp.AppHost.Remoting/1.0.0": {
+      "type": "project",
+      "path": "../CefSharp.AppHost.Remoting/CefSharp.AppHost.Remoting.csproj",
+      "msbuildProject": "../CefSharp.AppHost.Remoting/CefSharp.AppHost.Remoting.csproj"
+    },
+    "CefSharp.AppHost.Remoting.WPF/1.0.0": {
+      "type": "project",
+      "path": "../CefSharp.AppHost.Remoting.WPF/CefSharp.AppHost.Remoting.WPF.csproj",
+      "msbuildProject": "../CefSharp.AppHost.Remoting.WPF/CefSharp.AppHost.Remoting.WPF.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.2": [
+      "CefSharp.AppHost.Interfaces >= 1.0.0",
+      "CefSharp.AppHost.Remoting >= 1.0.0",
+      "CefSharp.AppHost.Remoting.WPF >= 1.0.0",
+      "CommandLineParser >= 1.9.71"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\alex\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Client\\CefSharp.AppHost.Client.x86.csproj",
+      "projectName": "CefSharp.AppHost.Client.x86",
+      "projectPath": "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Client\\CefSharp.AppHost.Client.x86.csproj",
+      "packagesPath": "C:\\Users\\alex\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Client\\obj.x86\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net462"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net462": {
+          "targetAlias": "net462",
+          "projectReferences": {
+            "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Interfaces\\CefSharp.AppHost.Interfaces.csproj": {
+              "projectPath": "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Interfaces\\CefSharp.AppHost.Interfaces.csproj"
+            },
+            "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Remoting.WPF\\CefSharp.AppHost.Remoting.WPF.csproj": {
+              "projectPath": "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Remoting.WPF\\CefSharp.AppHost.Remoting.WPF.csproj"
+            },
+            "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Remoting\\CefSharp.AppHost.Remoting.csproj": {
+              "projectPath": "C:\\Projects\\CefSharp.AppHost\\CefSharp.AppHost.Remoting\\CefSharp.AppHost.Remoting.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "allWarningsAsErrors": true,
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net462": {
+        "targetAlias": "net462",
+        "dependencies": {
+          "CommandLineParser": {
+            "target": "Package",
+            "version": "[1.9.71, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
+      }
+    }
+  }
+}

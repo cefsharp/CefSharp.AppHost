@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net462</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyTitle>CefSharp.AppHost.Example.Server</AssemblyTitle>
+    <Product>CefSharp.AppHost.Example.Server</Product>
+    <Copyright>Copyright © 2014</Copyright>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>$(SolutionDir)Build\$(Configuration)\</OutputPath>
+    <DebugType>full</DebugType>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.AddIn.Contract" />
+    <Reference Include="System.Windows.Presentation" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CefSharp.AppHost.Example.Remote.Services\CefSharp.AppHost.Example.Remote.Services.csproj" />
+    <ProjectReference Include="..\CefSharp.AppHost.Interfaces\CefSharp.AppHost.Interfaces.csproj" />
+    <ProjectReference Include="..\CefSharp.AppHost.Server\CefSharp.AppHost.Server.csproj" />
+  </ItemGroup>
+</Project>
